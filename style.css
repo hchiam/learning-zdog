@@ -1,0 +1,24 @@
+html {
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    margin: 0;
+  }
+  
+  .zdog-canvas {
+    background: #FDB;
+    cursor: move;
+    transition: background 0.5s;
+    &.isHovering {
+      background: maroon;
+    }
+  }
+  
+  input {
+    width: 5ch;
+  }
