@@ -19,17 +19,27 @@ Minimal example:
 ```js
 import Zdog from "zdog";
 
-let illo = new Zdog.Illustration({
+const illo = new Zdog.Illustration({
   element: "canvas",
   dragRotate: true,
 });
 
-new Zdog.Shape({
+const anchor = new Zdog.Anchor({
   addTo: illo,
-  path: [{ x: -50 }, { x: 50 }, { x: 50, y: 100 }, { x: 50, y: 100, z: 100 }],
+  rotate: { x: -Zdog.TAU / 10, y: Zdog.TAU / 10 },
+});
+
+new Zdog.Shape({
+  addTo: anchor,
+  path: [
+    { x: 0, y: 0, z: 0 },
+    { x: 100 },
+    { x: 0, y: 0, z: 0 },
+    { y: -100 },
+    { x: 0, y: 0, z: 0 },
+    { z: 100 },
+  ],
   closed: false,
-  translate: { z: 2 },
-  rotate: { x: -Zdog.TAU / 10, y: -Zdog.TAU / 10 },
   stroke: 50,
   color: "lime",
 });
